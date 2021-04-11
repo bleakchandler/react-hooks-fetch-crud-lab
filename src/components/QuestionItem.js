@@ -16,14 +16,14 @@ function QuestionItem({ question, onDeleteClick, onAnswerChange }) {
   function handleAnswerChange(event) {
     onAnswerChange(id, parseInt(event.target.value));
   }
-  
+
   return (
     <li>
       <h4>Question {id}</h4>
       <h5>Prompt: {prompt}</h5>
       <label>
         Correct Answer:
-        <select defaultValue={correctIndex}>{options}</select>
+        <select defaultValue={correctIndex} onChange={handleAnswerChange}>
       </label>
       <button onClick={handleDeleteClick}>Delete Question</button>
     </li>
